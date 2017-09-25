@@ -1,0 +1,63 @@
+<h1>hello {{name}}</h1>
+<ul>
+  <li>年龄：{{age}}</li>
+  <li>邮箱：{{email}}</li>
+  <li>联系地址：{{address.city + address.state + address.street}}</li>
+</ul>
+
+<!--{{hobbies}}-->
+
+<!--*ngFor angular4的遍历-->
+<ul>
+  <li *ngFor="let item of hobbies;let i = index">
+    {{i+1}}：{{item}}
+    <button (click)="deleteHobby(i)">x</button>
+  </li>
+</ul>
+
+
+<!--事件 (click) angular4的事件绑定方式，以下的submit如下-->
+<button (click)="onClick()">click me</button>
+<!--表单 如果不写事件，回车时会触发系统默认的submit事件-->
+<!--控件可通过 #名字(名字随意，#号必须) 来获取参数 -->
+<form (submit)="addHobby(hobby.value)" >
+  <div>
+    <label for="hobbies">爱好</label>
+    <input type="text" #hobby>
+  </div>
+</form>
+
+<hr>
+
+<button (click)="toggleEdit()">是否编辑用户信息</button>
+<!--编辑表单-->
+<!-- [(ngModel 双向绑定，值是在ts中设置的变量)] 在ng4中需要在app.modules中引入模块formsModule-->
+<div *ngIf="isEdit">
+  <h1>编辑用户信息</h1>
+  <form>
+    <div>
+      <label for="name">姓名</label>
+      <input name="name" type="text" [(ngModel)]="name">
+    </div>
+    <div>
+      <label for="age">年龄</label>
+      <input name="age" type="text" [(ngModel)]="age">
+    </div>
+    <div>
+      <label for="email">邮箱</label>
+      <input name="email" type="text" [(ngModel)]="email">
+    </div>
+    <div>
+      <label for="city">城市</label>
+      <input name="city" type="text" [(ngModel)]="address.city">
+    </div><div>
+    <label for="state">区</label>
+    <input name="state" type="text" [(ngModel)]="address.state">
+  </div>
+    <div>
+      <label for="street">街道</label>
+      <input name="street" type="text" [(ngModel)]="address.street">
+    </div>
+
+  </form>
+</div>
