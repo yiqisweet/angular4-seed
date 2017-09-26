@@ -6,6 +6,10 @@ import { AppComponent } from './app.component';
 import { UserComponent } from './components/user/user.component';
 import { HomeComponent } from './components/home/home.component'
 
+//服务
+//2、引入服务
+import { DataService } from './services/data.service';
+
 @NgModule({
   //自己创建的组件会在这里出现
 
@@ -20,7 +24,8 @@ import { HomeComponent } from './components/home/home.component'
     FormsModule
   ],
   //有关服务的放在这里
-  providers: [],
+  //2-1、加载dataService服务
+  providers: [DataService],
   //引到跟组件
   bootstrap: [AppComponent]
 })

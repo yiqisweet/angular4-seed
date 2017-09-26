@@ -30,7 +30,7 @@ app /  下存放组件
 4、通过HTTP Module对数据进行增删改查
 
 创建服务的步骤
-1、创建一个新的文件 /service/my-service.service.ts
+1、创建一个新的文件 /service/dataService.service.ts
 2、import @Injectable 并创建class
 3、引入Service 并添加到provider中
 4、任何组件需要使用的话 ，那么就需要在组件中引入服务，创建对象》调用方法
@@ -39,3 +39,4 @@ app /  下存放组件
 ng g service service/my-service
 会自动帮我创建文件已及写入对应的class
 我们需要手动将Service添加到provider中
+

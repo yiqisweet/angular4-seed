@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 // import {Address} from "cluster";
 
+//服务
+import { DataService } from '../../services/data.service'
+
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
@@ -18,9 +21,13 @@ export class UserComponent implements OnInit {
   //数组写法
   hobbies:string[];
   isEdit:boolean = false;
-  constructor() {
+  users : string[];
+  constructor(public dataService:DataService) {
     console.log('constructor');
+    this.users = this.dataService.getUsers();
   }
+
+
 
   ngOnInit() {
     console.log('init');
