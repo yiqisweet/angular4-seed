@@ -101,3 +101,19 @@ import { HttpModule } from '@angular/http'
 
 ## post传递数据
 跟get没有什么区别，改成post即可一样用订阅者模式接受返回参数
+## delete删除数据
+没区别，一样data.service中定义，改成delete
+
+
+
+## angular4路由 
+
+## 路由是做什么的？
+1、解决从一个视图到另一个视图  
+
+## 路由的基本步骤
+1、index.html设置<base href>  
+2、引入路由模块
+3、创建路由  
+4、设置路由出口  
+5、添加路由链接  
