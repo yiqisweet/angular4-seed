@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {FormsModule} from '@angular/forms';
+import { HttpModule } from '@angular/http'
 //引入的组件需要在这里添加
 import { AppComponent } from './app.component';
 import { UserComponent } from './components/user/user.component';
@@ -21,7 +22,8 @@ import { DataService } from './services/data.service';
   //模块放在这里，比如说httpModule
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpModule
   ],
   //有关服务的放在这里
   //2-1、加载dataService服务

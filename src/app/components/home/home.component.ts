@@ -8,11 +8,13 @@ import { DataService } from '../../services/data.service';
 })
 export class HomeComponent implements OnInit {
   //在当前定义属性
-  users : string[];
+  users : any[];
   //4、创建dataService对象并使用
   constructor(public dataService:DataService) {
-    //服务拿到的值赋给当前定义的属性
-    this.users = this.dataService.getUsers();
+    //这个方法是观察者的对象，就必须要使用订阅者模式subscribe
+    this.dataService.getUsers().subscribe(users => {
+      this.users = users;
+    })
   }
 
   ngOnInit() {

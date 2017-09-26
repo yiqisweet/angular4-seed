@@ -1,12 +1,20 @@
 import { Injectable } from '@angular/core';
+import { Http} from '@angular/http';
+
+import 'rxjs/add/operator/map';
 //1、创建服务
 @Injectable()
 export class DataService{
   users:string[];
-  constructor(){
-      this.users = ['张三','李四','王五']
+
+
+  constructor(public http:Http){
+
   }
   getUsers(){
-    return this.users;
+    //返回的数据是观察者对象
+    //get请求
+    return this.http.get('http://jsonplaceholder.typicode.com/users')
+      .map(res => res.json())
   }
 }

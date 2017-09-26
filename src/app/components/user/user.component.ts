@@ -24,7 +24,7 @@ export class UserComponent implements OnInit {
   users : string[];
   constructor(public dataService:DataService) {
     console.log('constructor');
-    this.users = this.dataService.getUsers();
+    // this.users = this.dataService.getUsers();
   }
 
 
