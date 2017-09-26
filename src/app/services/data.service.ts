@@ -31,4 +31,8 @@ export class DataService{
     return this.http.put('http://jsonplaceholder.typicode.com/users/'+user.id,user)
       .map(res => res.json());
   }
+  getSingleUser(id){
+    return this.http.get('http://jsonplaceholder.typicode.com/users/'+id)
+      .map(res => res.json())
+  }
 }

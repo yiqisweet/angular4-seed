@@ -12,11 +12,13 @@ import { HomeComponent } from './components/home/home.component'
 //2、引入服务
 import { DataService } from './services/data.service';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { UserDetailComponent } from './components/user-detail/user-detail.component';
 
-//创建路由
+//创建路由，带参数，注意是数组
 const appRoutes:Routes = [
   {path : '',component:HomeComponent},
-  {path : 'user',component:UserComponent}
+  {path : 'user',component:UserComponent},
+  {path : 'user/:id',component:UserDetailComponent}
 ]
 
 @NgModule({
@@ -24,6 +26,7 @@ const appRoutes:Routes = [
 
   declarations: [
     AppComponent,
+    UserDetailComponent ,
     UserComponent,
     HomeComponent,
     NavbarComponent

@@ -23,6 +23,7 @@
       </ul>
       <button class="btn btn-danger" (click)="onDeleteClick(user.id)">删除</button>
       <button class="btn btn-danger" (click)="onEditClick(user)">编辑</button>
+      <a class="btn btn-primary pull-right" [(routerLink)]="'/user/'+user.id">详情</a>
     </div>
   </div>
 </div>
