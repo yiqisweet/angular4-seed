@@ -7,10 +7,10 @@ angular4，ng4，seed，demo
 
 
 ## 需要掌握的姿势：
-1、HTML
-2、Css
-3、JavaScript
-4、拥有语言逻辑基础
+1、HTML  
+2、Css  
+3、JavaScript  
+4、拥有语言逻辑基础  
 
 ## 什么是angular
 1、前端最流行的主流JavaScript框架
