@@ -1,11 +1,28 @@
 <h1>hello</h1>
-
-<div *ngFor="let user of users">
-  <div class="well">
+<div class="container">
+  <form (submit)="onSubmit()">
+    <div class="form-group">
+      <label>姓名</label>
+      <input name="name" type="text" class="form-control" [(ngModel)]="user.name">
+    </div>
+    <div class="form-group">
+      <label>邮箱</label>
+      <input name="email" type="text" class="form-control" [(ngModel)]="user.email">
+    </div>
+    <div class="form-group">
+      <label>电话</label>
+      <input name="phone" type="text" class="form-control" [(ngModel)]="user.phone">
+    </div>
+    <button type="submit" class="btn btn-success" value="提交">提交</button>
+  </form>
+  <div *ngFor="let user of users">
+    <div class="well">
       <ul class="list-group">
         <li class="list-group-item">姓名：{{user.name}}</li>
         <li class="list-group-item">邮箱：{{user.email}}</li>
         <li class="list-group-item">电话：{{user.phone}}</li>
       </ul>
+    </div>
   </div>
 </div>
+

@@ -9,11 +9,23 @@ import { DataService } from '../../services/data.service';
 export class HomeComponent implements OnInit {
   //在当前定义属性
   users : any[];
+  user = {
+    name:'',
+    email:'',
+    phone:''
+  }
   //4、创建dataService对象并使用
   constructor(public dataService:DataService) {
     //这个方法是观察者的对象，就必须要使用订阅者模式subscribe
     this.dataService.getUsers().subscribe(users => {
       this.users = users;
+    })
+  }
+  onSubmit(){
+    //订阅者模式
+    this.dataService.addUser(this.user).subscribe(user=>{
+      console.log(user);
+      this.users.unshift(user)
     })
   }
 
